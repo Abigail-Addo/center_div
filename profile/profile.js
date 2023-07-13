@@ -1,18 +1,10 @@
-// alert("javascript is working")
 
-const uploadButton = document.querySelector('div.image div.camera');
-const uploadInput = document.querySelector('.trick-upload input[type=file]');
+// Password visibility
+const togglePassword = document.querySelector("#togglePassword");
+const password = document.querySelector("#password");
 
-uploadButton.addEventListener('click', function() {
-    uploadInput.click();
-});
-
-
-const readText = () => {
-
-    alert("hello I am ready to ready text")
-
-}
-
-
-// readText();
+togglePassword.addEventListener("click", function() {
+    const type = password.getAttribute('type') === "password" ? "text" : "password";
+    password.setAttribute("type", type);
+    this.classList.toggle("bi-eye")
+} );

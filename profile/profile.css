@@ -10,7 +10,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: aqua;
 }
 
 header {
@@ -21,8 +20,8 @@ header {
 }
 
 main {
-    width: 70%;
-    height: 80vh;
+    width: 80%;
+    height: 85vh;
     background-color: purple;
     overflow: hidden;
 }
@@ -108,21 +107,40 @@ button {
 }
 
 form {
-    margin: 3rem 2rem 2rem;
+    margin: 2rem 1rem 1rem;
 }
 
 div.formControl {
     display: grid;
     grid-template-columns: 3fr;
 }
-
+div.password {
+    position: relative;
+}
+/* .formControl i .bi {
+    position: absolute;
+    bottom: 15%;
+    right: 0;
+    padding: 1rem;
+    cursor: pointer;
+    color: #fff;
+  
+} */
+form i {
+    border: px solid black;
+    cursor: pointer;
+    position: absolute;
+    bottom: 40%;
+    right: 5%;
+    color: #fff;
+}
 .gridCol {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
 }
 input  {
-    padding: 0.7rem 0.5rem;
+    padding: 0.7rem 3rem 0.5rem 1rem;
     border-radius: 15px;
     background-color: #0d141d;
     color: #FFF;
@@ -134,7 +152,8 @@ label {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.1rem;
+    margin-left: 0.5rem;
     color: #FFF;
 
 }
@@ -142,10 +161,12 @@ label {
     display: grid;
    grid-template-columns: 3fr;
     margin-top: 1rem;
+
     
 }
 .submitUpdate {
     display: flex;
     justify-content: center;
     font-size: 1rem;
+    cursor: pointer;
 }
