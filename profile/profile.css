@@ -69,6 +69,7 @@ div.camera svg {
     position: absolute;
     left: 57%;
     bottom: 0;
+    cursor: pointer;
 }
 
 main .picture {
@@ -114,18 +115,11 @@ div.formControl {
     display: grid;
     grid-template-columns: 3fr;
 }
+
 div.password {
     position: relative;
 }
-/* .formControl i .bi {
-    position: absolute;
-    bottom: 15%;
-    right: 0;
-    padding: 1rem;
-    cursor: pointer;
-    color: #fff;
-  
-} */
+
 form i {
     border: px solid black;
     cursor: pointer;
@@ -134,12 +128,14 @@ form i {
     right: 5%;
     color: #fff;
 }
+
 .gridCol {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
 }
-input  {
+
+input {
     padding: 0.7rem 3rem 0.5rem 1rem;
     border-radius: 15px;
     background-color: #0d141d;
@@ -148,6 +144,7 @@ input  {
     border: 0;
     outline: 0;
 }
+
 label {
     display: flex;
     flex-direction: column;
@@ -157,16 +154,27 @@ label {
     color: #FFF;
 
 }
+
 .btn {
     display: grid;
-   grid-template-columns: 3fr;
+    grid-template-columns: 3fr;
     margin-top: 1rem;
 
-    
+
 }
+
 .submitUpdate {
     display: flex;
     justify-content: center;
     font-size: 1rem;
     cursor: pointer;
 }
+
+.trick-upload{
+    width: 50%;
+    height: 4rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+  }

@@ -24,7 +24,7 @@
         <section class="profile">
             <div class="info">
                 <div class="image">
-                    <img src="img/pic.jpg" alt="profile">
+                    <img src="img/pic.jpg" alt="profile" id="image">
                     <div class="camera">
                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#ffffff"
                             class="bi bi-camera" viewBox="0 0 16 16">
@@ -38,19 +38,19 @@
                 <div class="details">
                     <div>
                         <h5>Name</h5>
-                        <p>Abigail Addo</p>
+                        <p id="name">Abigail Addo</p>
                     </div>
                     <div>
                         <h5>School</h5>
-                        <p>University of Ghana</p>
+                        <p id="school">University of Ghana</p>
                     </div>
                     <div>
                         <h5>Email</h5>
-                        <p>addoa350@gmail.com</p>
+                        <p id="email">addoa350@gmail.com</p>
                     </div>
                     <div>
                         <h5>Emergency Contact</h5>
-                        <p>+233 553048458</p>
+                        <p id="contact">+233 553048458</p>
                     </div>
                 </div>
             </div>
@@ -59,12 +59,12 @@
                     <div class="gridCol">
                         <div class="formControl ">
                             <label for="fname">First Name</label>
-                            <input type="text" id="fname" placeholder="last name" />
+                            <input type="text" id="firstname" placeholder="last name" />
 
                         </div>
                         <div class="formControl ">
                             <label for="lname">Last Name</label>
-                            <input type="text" id="lname" placeholder="last name" />
+                            <input type="text" id="lastname" placeholder="last name" />
 
                         </div>
 
@@ -99,6 +99,9 @@
             </div>
 
         </section>
+        <div class="upload trick-upload">
+            <input type="file" id="file" />
+        </div>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="profile.js"></script>
