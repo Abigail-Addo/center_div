@@ -1,0 +1,177 @@
+@media only screen and (max-width: 425px) {
+    main {
+        width: 100%;
+        overflow: scroll;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    section.profile {
+        width: 90%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: auto;
+        gap: 1rem;
+        margin: 0.5rem;
+
+    }
+
+    header {
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0.5rem 1rem;
+    }
+
+    div.details {
+        margin-bottom: 2rem;
+    }
+
+    .info {
+        width: 100%;
+        margin: 0;
+    }
+
+    div.form {
+        width: 100%;
+        margin: 0;
+    }
+
+    form {
+        margin-bottom: 2rem;
+    }
+
+    .gridCol {
+        display: grid;
+        grid-template-columns: 3fr;
+        width: 100%;
+        gap: 0;
+    }
+
+}
+
+@media only screen and (max-width: 600px) and (min-width: 426px) {
+    main {
+        width: 100%;
+        overflow: scroll;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    section.profile {
+        width: 90%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: auto;
+        gap: 1rem;
+        margin: 0.5rem;
+
+    }
+
+    header {
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0.5rem 1rem;
+    }
+
+    div.details {
+        margin-bottom: 2rem;
+    }
+
+    .info {
+        width: 100%;
+        margin: 0;
+    }
+
+    div.form {
+        width: 100%;
+        margin: 0;
+    }
+
+    form {
+        margin-bottom: 2rem;
+    }
+
+    .gridCol {
+        display: grid;
+        grid-template-columns: 3fr;
+        width: 100%;
+        gap: 0;
+    }
+
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 601px) {
+    main {
+        width: 100%;
+        overflow: scroll;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    section.profile {
+        width: 90%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: auto;
+        gap: 1rem;
+        margin: 0.5rem;
+
+    }
+
+    header {
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0.5rem 1rem;
+        font-size: 2rem;
+    }
+
+    .image img {
+        width: 20%;
+
+    }
+
+    div.details {
+        margin: 5rem;
+        font-size: 2rem;
+    }
+
+    .info {
+        width: 100%;
+        margin: 0;
+    }
+
+    div.form {
+        width: 100%;
+        margin: 0;
+    }
+
+    .submitUpdate {
+        font-size: 2rem;
+    }
+
+    form {
+        margin: 5rem;
+        font-size: 2rem;
+    }
+
+    input {
+        font-size: 2rem;
+    }
+
+    .gridCol {
+        display: grid;
+        grid-template-columns: 3fr;
+        width: 100%;
+        gap: 0;
+    }
+
+}
