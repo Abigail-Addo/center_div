@@ -15,6 +15,7 @@ $(document).ready(function () {
 
     console.log("main javascript file is working")
 
+    // change image
     const uploadButton = document.querySelector(".image .camera");
     uploadButton.addEventListener("click", function () {
         document.querySelector("input[type=file]").click();
@@ -29,9 +30,72 @@ $(document).ready(function () {
             }
         });
     });
+    // changing the emergency contact to contact
 
+    setInterval(() => {
+
+        const width = window.innerWidth;
+
+        if (width <= 425) {
+
+            const contactLabel = document.querySelector("div.formControl.contact > label");
+            $(contactLabel).text('');
+            $(contactLabel).text('Contact');
+
+        }
+
+    }, 4000);
+
+        
+    const changeProfile = document.querySelector('header svg');
+    // -------- switch to edit profile---------------
+    changeProfile.addEventListener('click', function() {
+        const editProfile = document.querySelector('.form');
+        const profileControl = document.querySelector('.info');
+        profileControl.classList.remove('d-flex');
+        profileControl.classList.add('d-none');
+    
+        // -----------  show edit profile --------------
+        editProfile.classList.remove('d-none');
+        editProfile.classList.add('d-block');
+    
+        const editHeader = document.querySelector('header h3');
+        editHeader.style.display = 'flex';
+    });
+
+
+    // form update
     $('.submitUpdate').click(function (e) {
         e.preventDefault();
+
+        const editHeader = document.querySelector('header h3');
+        editHeader.style.display = 'none';
+    
+    
+    
+        // ---------------- get window width ----------------
+        const width = window.innerWidth;
+        console.log(width);
+    
+        if( width <= 425){
+            // alert("Please use a desktop to update your profile");
+    
+          
+            const editProfile = document.querySelector('.form');
+            profileInfo = document.querySelector('.info .details');
+            // editProfile.style.display = 'none';
+            
+            const profileControl = document.querySelector('.form');
+            profileControl.style.height = '100vh';
+            profileControl.classList.remove('d-none');
+            profileControl.classList.add('d-flex');
+        
+            // -----------  show edit profile --------------
+            editProfile.classList.remove('d-block');
+            editProfile.classList.add('d-none');
+            profileInfo.classList.add('d-flex')
+    
+        }
 
         let student_name = $('p#name');
         let school = $('p#school');

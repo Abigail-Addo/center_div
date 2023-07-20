@@ -176,3 +176,14 @@ label {
     left: 0;
     visibility: hidden;
   }
+  .d-flex {
+    display: flex;
+  }
+  
+  .d-block{
+    display: block;
+  }
+  
+  .d-none{
+    display: none;
+  }
