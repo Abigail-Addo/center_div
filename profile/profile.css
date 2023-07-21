@@ -22,7 +22,7 @@ header {
 main {
     width: 80%;
     height: 85vh;
-    background-color: purple;
+    background-color: #4B71A6;
     overflow: hidden;
 }
 
@@ -69,10 +69,6 @@ div.camera svg {
     bottom: 0;
     cursor: pointer;
 }
-
-/* main .picture {
-    margin: 2rem;
-} */
 
 div.details {
     display: flex;
@@ -150,15 +146,12 @@ label {
     margin-bottom: 0.1rem;
     margin-left: 0.5rem;
     color: #FFF;
-
 }
 
 .btn {
     display: grid;
     grid-template-columns: 1fr;
     margin-top: 1rem;
-
-
 }
 
 .submitUpdate {
@@ -186,4 +179,7 @@ label {
   
   .d-none{
     display: none;
+  }
+  .logout{
+    cursor: pointer;
   }

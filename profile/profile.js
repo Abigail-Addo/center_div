@@ -1,17 +1,26 @@
-
-// Password visibility
-const togglePassword = document.querySelector("#togglePassword");
-const password = document.querySelector("#password");
-
-togglePassword.addEventListener("click", function () {
-    const type = password.getAttribute('type') === "password" ? "text" : "password";
-    password.setAttribute("type", type);
-    this.classList.toggle("bi-eye")
-});
-
 // ------------------- wait for all element to load ------------------- 
-$(document).ready(function () {
+$(function () {
+    let initEmail = $("p#email");
 
+    const params = new URLSearchParams(window.location.search);
+
+    // Check if we have the param bodmas
+    if (params.has("email")) {
+
+        initEmail.text("");
+        // -------- set email to span element --------------
+        initEmail.text(params.get("email"));
+        
+    } else {
+        console.log("The param myParam is not present.");
+    }
+    
+    //logout
+    const logout = document.querySelector(".logout");
+    logout.addEventListener("click", function (e) {
+        e.preventDefault();
+        window.location.href = "Log in/index.html";
+    });
 
     console.log("main javascript file is working")
 
@@ -46,19 +55,19 @@ $(document).ready(function () {
 
     }, 4000);
 
-        
+
     const changeProfile = document.querySelector('header svg');
     // -------- switch to edit profile---------------
-    changeProfile.addEventListener('click', function() {
+    changeProfile.addEventListener('click', function () {
         const editProfile = document.querySelector('.form');
         const profileControl = document.querySelector('.info');
         profileControl.classList.remove('d-flex');
         profileControl.classList.add('d-none');
-    
+
         // -----------  show edit profile --------------
         editProfile.classList.remove('d-none');
         editProfile.classList.add('d-block');
-    
+
         const editHeader = document.querySelector('header h3');
         editHeader.style.display = 'flex';
     });
@@ -70,31 +79,31 @@ $(document).ready(function () {
 
         const editHeader = document.querySelector('header h3');
         editHeader.style.display = 'none';
-    
-    
-    
+
+
+
         // ---------------- get window width ----------------
         const width = window.innerWidth;
         console.log(width);
-    
-        if( width <= 425){
+
+        if (width <= 425) {
             // alert("Please use a desktop to update your profile");
-    
-          
+
+
             const editProfile = document.querySelector('.form');
             profileInfo = document.querySelector('.info .details');
             // editProfile.style.display = 'none';
-            
+
             const profileControl = document.querySelector('.form');
             profileControl.style.height = '100vh';
             profileControl.classList.remove('d-none');
             profileControl.classList.add('d-flex');
-        
+
             // -----------  show edit profile --------------
             editProfile.classList.remove('d-block');
             editProfile.classList.add('d-none');
             profileInfo.classList.add('d-flex')
-    
+
         }
 
         let student_name = $('p#name');
