@@ -11,18 +11,16 @@ window.addEventListener('load', () => {
         password.setAttribute("type", type);
         this.classList.toggle("bi-eye")
     });
-
-    const btn = document.querySelector('.wrapper form .form-group button');
+    // error message
+    const btn = document.querySelector('.wrapper form div.btn button');
 
     btn.addEventListener('click', function (e) {
         e.preventDefault();
 
-        const email = document.querySelector('.wrapper form .form-group input[type="email"]');
+        const email = document.querySelector('.wrapper form .formControl input[type="email"]');
         console.log(email.value);
-        const error = document.querySelector('.wrapper form .error');
-        const message = document.querySelector('.wrapper form .error .error-message');
-
-
+        const error = document.querySelector('.wrapper form div.error');
+        const message = document.querySelector('.wrapper form div.error .error-message');
 
         if (email.value == '' || email.value == null || password.value == '' || password.value == null) {
             $(error).fadeIn('slow');
@@ -33,12 +31,7 @@ window.addEventListener('load', () => {
             }, 3000);
             return;
         }
-
-        window.location.href = `../profile.html?email=${email.value}`;
-
-
-
+        window.location.href = `../profile/profile.html?email=${email.value}`;
     });
-
 
 });

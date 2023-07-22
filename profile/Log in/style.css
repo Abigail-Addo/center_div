@@ -21,9 +21,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 2px solid black;
-    /* overflow: auto; */
-    /* padding: 0.8rem 0.5rem; */
+    overflow: auto;
 }
 
 form {
@@ -34,7 +32,6 @@ form {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 2px solid black;
 }
 
 form .brand {
@@ -115,14 +112,14 @@ div span {
     width: 100%;
 }
 
-div span a {
+div a {
     color: rgba(255, 255, 255, 0.7);
     text-decoration: none;
     font-weight: bold;
     margin-bottom: 2rem;
 }
 
-div span a:hover {
+div a:hover {
     color: #274063;
 }
 
@@ -134,16 +131,11 @@ i.bi-eye-slash {
     color: #fff;
 }
 
-.btn {
-    display: grid;
-    grid-template-columns: 1fr;
+div.btn {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
     margin-top: 1rem;
-}
-
-.btn {
-    display: grid;
-    justify-content: center;
-    grid-template-columns: 1fr;
 }
 
 button {
@@ -168,15 +160,6 @@ button:hover {
     outline: #143056;
 }
 
-.wrapper div.logout {
-    cursor: pointer;
-    width: 60%;
-    display: flex;
-    justify-content: flex-end;
-    border: 2px solid black;
-    padding: 1rem;
-}
-
 ::-webkit-scrollbar {
     width: 0.4rem;
 }
@@ -198,6 +181,7 @@ button:hover {
         width: 100%;
         height: 100%;
         padding: 1rem;
+        margin-top: 2rem;
     }
 
     .wrapper .brand img {
@@ -214,8 +198,5 @@ button:hover {
 
     div.formControl {
         margin: 0 0 1rem 0;
-
     }
-
-
 }

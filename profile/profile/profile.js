@@ -1,25 +1,38 @@
 // ------------------- wait for all element to load ------------------- 
 $(function () {
     let initEmail = $("p#email");
+    let initName = $("p#name");
+    let initContact = $("p#contact");
+    let initSchool = $("p#school");
 
     const params = new URLSearchParams(window.location.search);
 
-    // Check if we have the param bodmas
     if (params.has("email")) {
 
         initEmail.text("");
-        // -------- set email to span element --------------
         initEmail.text(params.get("email"));
-        
+
+    }
+    if (params.has("name")) {
+        initName.text("");
+        initName.text(params.get("name"));
+    }
+    if (params.has("contact")) {
+        initContact.text("");
+        initContact.text(params.get("contact"));
+    }
+    if (params.has("school")) {
+        initSchool.text("");
+        initSchool.text(params.get("school"));
     } else {
         console.log("The param myParam is not present.");
-    }
-    
+    };
+
     //logout
     const logout = document.querySelector(".logout");
     logout.addEventListener("click", function (e) {
         e.preventDefault();
-        window.location.href = "Log in/index.html";
+        window.location.href = "../Log in/index.html";
     });
 
     console.log("main javascript file is working")
@@ -39,7 +52,7 @@ $(function () {
             }
         });
     });
-    // changing the emergency contact to contact
+    // changing the personal contact to contact
 
     setInterval(() => {
 
@@ -55,56 +68,9 @@ $(function () {
 
     }, 4000);
 
-
-    const changeProfile = document.querySelector('header svg');
-    // -------- switch to edit profile---------------
-    changeProfile.addEventListener('click', function () {
-        const editProfile = document.querySelector('.form');
-        const profileControl = document.querySelector('.info');
-        profileControl.classList.remove('d-flex');
-        profileControl.classList.add('d-none');
-
-        // -----------  show edit profile --------------
-        editProfile.classList.remove('d-none');
-        editProfile.classList.add('d-block');
-
-        const editHeader = document.querySelector('header h3');
-        editHeader.style.display = 'flex';
-    });
-
-
     // form update
     $('.submitUpdate').click(function (e) {
         e.preventDefault();
-
-        const editHeader = document.querySelector('header h3');
-        editHeader.style.display = 'none';
-
-
-
-        // ---------------- get window width ----------------
-        const width = window.innerWidth;
-        console.log(width);
-
-        if (width <= 425) {
-            // alert("Please use a desktop to update your profile");
-
-
-            const editProfile = document.querySelector('.form');
-            profileInfo = document.querySelector('.info .details');
-            // editProfile.style.display = 'none';
-
-            const profileControl = document.querySelector('.form');
-            profileControl.style.height = '100vh';
-            profileControl.classList.remove('d-none');
-            profileControl.classList.add('d-flex');
-
-            // -----------  show edit profile --------------
-            editProfile.classList.remove('d-block');
-            editProfile.classList.add('d-none');
-            profileInfo.classList.add('d-flex')
-
-        }
 
         let student_name = $('p#name');
         let school = $('p#school');
