@@ -31,7 +31,7 @@ window.addEventListener('load', () => {
             }, 3000);
             return;
         }
-        window.location.href = `../profile/profile.html?email=${email.value}`;
+        window.location.href = `profile.html?email=${email.value}`;
     });
 
 });

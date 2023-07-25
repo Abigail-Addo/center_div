@@ -36,14 +36,14 @@ $(function () {
             return;
         }
 
-        window.location.href = `../profile/profile.html?email=${email.value}&name=${name.value}&contact=${contact.value}&school=${school.value}`;
+        window.location.href = `profile.html?email=${email.value}&name=${name.value}&contact=${contact.value}&school=${school.value}`;
     });
 
     //logout
     const logout = document.querySelector(".logout");
     logout.addEventListener("click", function (e) {
         e.preventDefault();
-        window.location.href = "../Log in/index.html";
+        window.location.href = "index.html";
     });
 
 });

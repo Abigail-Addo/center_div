@@ -32,7 +32,7 @@ $(function () {
     const logout = document.querySelector(".logout");
     logout.addEventListener("click", function (e) {
         e.preventDefault();
-        window.location.href = "../Log in/index.html";
+        window.location.href = "index.html";
     });
 
     console.log("main javascript file is working")
@@ -71,6 +71,9 @@ $(function () {
     // form update
     $('.submitUpdate').click(function (e) {
         e.preventDefault();
+
+        const editHeader = document.querySelector('header h3');
+        editHeader.style.display = 'none';
 
         let student_name = $('p#name');
         let school = $('p#school');
