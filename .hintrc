@@ -3,6 +3,12 @@
     "development"
   ],
   "hints": {
-    "button-type": "off"
+    "disown-opener": "off",
+    "axe/name-role-value": [
+      "default",
+      {
+        "link-name": "off"
+      }
+    ]
   }
 }
