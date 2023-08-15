@@ -117,3 +117,7 @@ const sum = ages.reduce((a, b) => {
   // })
   
     //  console.log(totalYears);
+
+
+
+    
