@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Football Players</title>
+    <style>
+               table{
+            width: 100%;
+        }
+        table, th, td {
+            border: 1px solid;
+        }
+    </style>
+</head>
+
+
+<body>
+    <h1>Football Players</h1>
+    <table id="playerTable">
+        <tr>
+            <th>Player Name</th>
+            <th>Country</th>
+        </tr>
+    </table>
+
+
+
+
+
+    <script>
+        // Sample data: Football player names and their countries
+        var playerData = [
+            { name: "Lionel Messi", country: "Argentina" },
+            { name: "Cristiano Ronaldo", country: "Portugal" },
+            { name: "Neymar Jr.", country: "Brazil" },
+            { name: "Kylian Mbappé", country: "France" },
+            // Add more player data here
+        ];
+
+        // console.log(playerData[2].name)
+
+        // Get the table element
+        var table = document.getElementById("playerTable");
+
+        // Loop through the player data and add rows to the table
+        // for (var i = 0; i < playerData.length; i++) {
+        //     var row = table.insertRow(i + 1); // Start from index 1 to skip header row
+
+        //     var playerNameCell = row.insertCell(0);
+        //     var countryCell = row.insertCell(1);
+
+        //     playerNameCell.innerHTML = playerData[i].name;
+        //     countryCell.innerHTML = playerData[i].country;
+        // }
+
+         // Loop through the player data and add rows to the table
+         playerData.forEach((player)=> {
+            var row = table.insertRow(-1); // -1 appends the row to the end of the table
+
+            var playerNameCell = row.insertCell(0);
+            var countryCell = row.insertCell(1);
+
+            playerNameCell.innerHTML = player.name;
+            countryCell.innerHTML = player.country;
+        });
+    </script>
+    <!-- <script src="callback.js"></script> -->
+    <script src="promise.js"></script>
+</body>
+</html>
