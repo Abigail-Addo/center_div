@@ -68,34 +68,106 @@ $(function () {
 
     }, 4000);
 
+    //---------------- post data to server -----------------------
+    (async () => {
+        // console.log("self invoking function is working")
+
+
+
+        //----------- get form data-------------
+        const fn = document.querySelector('input#firstname').value
+        const ln = document.querySelector('input#lastname').value
+        const school_right = document.querySelector("input#school").value;
+        const email_right = document.querySelector("input#email").value;
+        const phone_right = document.querySelector("input#contact").value;
+
+        if (fn == '' || email == '') {
+            alert('please fill all fields')
+
+            return
+        }
+
+        const postData = {
+            firstname: fn,
+            lastname: ln,
+            email: email_right,
+            school: school_right,
+            contact: phone_right,
+        }
+
+        // console.log(postData)
+
+        console.log(fn)
+
+
+        //------------------ ajax approach ---------------
+        // $.ajax({
+        //   type: "POST",
+        //   url: "http://localhost:8000/api/user",
+        //   dataType : "json",
+        //   contentType: "application/json; charset=utf-8",
+        //   data: JSON.stringify(postData),
+        //   success: function (response) {
+        //     console.log(response)
+        //   }
+        // });
+
+        try {
+            const url = 'https://pick-up-service-de35950ca197.herokuapp.com/api'
+
+
+            
+            const requestOptions = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json' // Set the content type to JSON
+                },
+                body: JSON.stringify(postData) // Convert user data to JSON string
+            };
+            const result = await fetch('http://localhost:8000/api/user', requestOptions)//fetch ends here
+
+            let res = await result.json();
+            console.log(res)
+
+        } catch (error) {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorCode, errorMessage);
+        }
+
+
+
+    })();
+
+
     // form update
-    $('.submitUpdate').click(function (e) {
-        e.preventDefault();
+    // $('.submitUpdate').click(function (e) {
+    //     e.preventDefault();
 
-        const editHeader = document.querySelector('header h3');
-        editHeader.style.display = 'none';
+    //     const editHeader = document.querySelector('header h3');
+    //     editHeader.style.display = 'none';
 
-        let student_name = $('p#name');
-        let school = $('p#school');
-        let profile_email = $('p#email');
-        let profile_phone = $('p#contact');
+    //     let student_name = $('p#name');
+    //     let school = $('p#school');
+    //     let profile_email = $('p#email');
+    //     let profile_phone = $('p#contact');
 
 
-        let first_name = $('input#firstname').val();
-        let last_name = $('input#lastname').val();
-        let school_name = $('input#school').val();
-        let email = $('input#email').val();
-        let phone = $('input#contact').val();
+    //     let first_name = $('input#firstname').val();
+    //     let last_name = $('input#lastname').val();
+    //     let school_name = $('input#school').val();
+    //     let email = $('input#email').val();
+    //     let phone = $('input#contact').val();
 
-        student_name.text('');
-        student_name.text(first_name + " " + last_name);
-        school.text('');
-        school.text(school_name);
-        profile_email.text('');
-        profile_email.text(email);
-        profile_phone.text('');
-        profile_phone.text(phone);
-    });
+    //     student_name.text('');
+    //     student_name.text(first_name + " " + last_name);
+    //     school.text('');
+    //     school.text(school_name);
+    //     profile_email.text('');
+    //     profile_email.text(email);
+    //     profile_phone.text('');
+    //     profile_phone.text(phone);
+    // });
 });
 
     // ------------------- wait for all element to load ends ------------------- 
