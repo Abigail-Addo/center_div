@@ -1,0 +1,182 @@
+:root {
+    --background: #ffffffbe;
+    --background-light: white;
+    --color-primary: #274063;
+    --color-success: #288220;
+    --color-primary-variant: #205196;
+    --border-radius: 10px;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100vh;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    /* overflow: hidden; */
+    background-color: var(--background);
+}
+
+.wrapper .sidebar {
+    width: 100%;
+    height: 100%;
+    /* padding: 1rem 0.4rem; */
+    box-shadow: 10px 0px 5px -2px rgba(0, 0, 0, 0.5);
+    background-color: var(--background-light);
+    /* border: 2px solid black; */
+
+}
+
+.wrapper .sidebar {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    /* height: 6rem; */
+    width: 100%;
+    padding: 1rem 0;
+    /* margin: 0 auto; */
+}
+
+.wrapper section {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* grid-template-columns: 1fr 1fr; */
+    /* border: 2px solid black; */
+    /* padding: 1rem 1.3rem; */
+}
+
+.wrapper section .nav {
+    width: 100%;
+    height: 100%;
+    padding: 1rem 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    /* align-items: center; */
+    /* margin: auto; */
+    text-align: center;
+    /* border: 2px solid black; */
+    overflow: auto;
+
+    /* align-items: center; */
+    /* border: 2px solid black; */
+}
+
+.wrapper section .container {
+    width: 100%;
+    height: 100%;
+    box-shadow: -10px 0px 5px -2px rgba(0, 0, 0, 0.5);
+
+}
+
+.wrapper section .container .to-do-container {
+    width: 100%;
+    height: 100%;
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* border: 2px solid black; */
+
+
+}
+
+.wrapper section .container .to-do-container h1 {
+    /* margin-top: 3rem; */
+    /* border: 2px solid black; */
+
+}
+
+
+.wrapper section .container .to-do-container .add-item {
+    font-size: 1.8rem;
+    background-color: var(--color-primary);
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+    padding: 1rem;
+    position: relative;
+    width: 90%;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.8rem;
+    border: 2px solid yellow;
+
+}
+
+.wrapper section .container .to-do-container .add-item input {
+    width: 85%;
+    border-radius: var(--border-radius);
+    padding: 0 1rem;
+}
+
+.wrapper section .container .to-do-container .add-item span {
+    font-size: 2rem;
+    font-weight: 500;
+    background-color: var(--color-success);
+    color: var(--background-light);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+}
+
+.wrapper section .nav .item-container .item {
+    display: flex;
+    padding: 0.8rem 1rem;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    height: 5rem;
+    background-color: #5f96bd;
+    text-align: left;
+    margin: 0 auto;
+    margin-top: 1rem;
+    /* margin-bottom: 1rem; */
+    color: var(--background-light);
+    border-radius: var(--border-radius);
+    
+}
+
+.wrapper section .nav .item-container .item span {
+    font-size: 2.4rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+span.material-symbols-outlined.delete {
+    color: red;
+
+}
+
+
+
+
+@media screen and (max-width:768px) {
+    .sidebar {
+        display: none;
+    }
+
+    .wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .wrapper section .container .to-do-container .add-item {
+        width: 80%;
+    }
+
+    .wrapper section .container .to-do-container .item {
+        width: 80%;
+    }
+
+}

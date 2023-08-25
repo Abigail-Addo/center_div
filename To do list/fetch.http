@@ -1,0 +1,3 @@
+GET http://kojoyeboah53i-d962a2da663c.herokuapp.com/api/ordabl/items
+
+POST http://kojoyeboah53i-d962a2da663c.herokuapp.com/api/ordabl/items
