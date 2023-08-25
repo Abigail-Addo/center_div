@@ -24,7 +24,8 @@ $(function () {
     if (params.has("school")) {
         initSchool.text("");
         initSchool.text(params.get("school"));
-    } else {
+    }
+    else {
         console.log("The param myParam is not present.");
     };
 
@@ -35,7 +36,15 @@ $(function () {
         window.location.href = "index.html";
     });
 
-    console.log("main javascript file is working")
+       //edit
+       const edit = document.querySelector("svg.bi-pencil-fill");
+       edit.addEventListener("click", function (e) {
+           e.preventDefault();
+           window.location.href = "user.html";
+       });
+   
+
+    // console.log("main javascript file is working")
 
     // change image
     const uploadButton = document.querySelector(".image .camera");
@@ -68,78 +77,87 @@ $(function () {
 
     }, 4000);
 
-    //---------------- post data to server -----------------------
-    (async () => {
-        // console.log("self invoking function is working")
+    $(".submitUpdate").click(function (e) {
+        e.preventDefault();
+        //---------------- post data to server -----------------------
+        (async () => {
+            console.log("self invoking function is working")
 
 
 
-        //----------- get form data-------------
-        const fn = document.querySelector('input#firstname').value
-        const ln = document.querySelector('input#lastname').value
-        const school_right = document.querySelector("input#school").value;
-        const email_right = document.querySelector("input#email").value;
-        const phone_right = document.querySelector("input#contact").value;
+            //----------- get form data-------------
+            const fn = document.querySelector('input#firstname').value
+            const ln = document.querySelector('input#lastname').value
+            const school_right = document.querySelector("input#school").value;
+            const email_right = document.querySelector("input#email").value;
+            const phone_right = document.querySelector("input#contact").value;
 
-        if (fn == '' || email == '') {
-            alert('please fill all fields')
+            if (fn == '' || ln == '' || email == '' || school_right == '' || email_right == '' || phone_right == '') {
+                alert('please fill all fields')
 
-            return
-        }
+                return
+            }
 
-        const postData = {
-            firstname: fn,
-            lastname: ln,
-            email: email_right,
-            school: school_right,
-            contact: phone_right,
-        }
+            const postData = {
+                firstname: fn,
+                lastname: ln,
+                email: email_right,
+                school: school_right,
+                contact: phone_right,
+            }
 
-        // console.log(postData)
+            // console.log(postData)
 
-        console.log(fn)
+            console.log(fn)
+
+            try {
+                // const url = 'http://kojoyeboah53i-d962a2da663c.herokuapp.com/api/ordabl/user'
+
+                const requestOptions = {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json' // Set the content type to JSON
+                    },
+                    body: JSON.stringify(postData) // Convert user data to JSON string
+                };
+                const result = await fetch('http://kojoyeboah53i-d962a2da663c.herokuapp.com/api/ordabl/user', requestOptions)//fetch ends here
+
+                let res = await result.json();
+                console.log(res);
+
+                document.querySelector('p#name').innerHTML = res.firstname + ' ' + res.lastname;
+                document.querySelector('p#email').innerHTML = res.email;
+                document.querySelector('p#school').innerHTML = res.school;
+                document.querySelector('p#contact').innerHTML = res.contact;
 
 
-        //------------------ ajax approach ---------------
-        // $.ajax({
-        //   type: "POST",
-        //   url: "http://localhost:8000/api/user",
-        //   dataType : "json",
-        //   contentType: "application/json; charset=utf-8",
-        //   data: JSON.stringify(postData),
-        //   success: function (response) {
-        //     console.log(response)
-        //   }
-        // });
+            } catch (error) {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                console.log(errorCode, errorMessage);
+            }
+        })
+            ();
 
-        try {
-            const url = 'https://pick-up-service-de35950ca197.herokuapp.com/api'
+    });
+
+
+});
+
+         //------------------ ajax approach ---------------
+            // $.ajax({
+            //   type: "POST",
+            //   url: "http://localhost:8000/api/user",
+            //   dataType : "json",
+            //   contentType: "application/json; charset=utf-8",
+            //   data: JSON.stringify(postData),
+            //   success: function (response) {
+            //     console.log(response)
+            //   }
+            // });
 
 
             
-            const requestOptions = {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json' // Set the content type to JSON
-                },
-                body: JSON.stringify(postData) // Convert user data to JSON string
-            };
-            const result = await fetch('http://localhost:8000/api/user', requestOptions)//fetch ends here
-
-            let res = await result.json();
-            console.log(res)
-
-        } catch (error) {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            console.log(errorCode, errorMessage);
-        }
-
-
-
-    })();
-
-
     // form update
     // $('.submitUpdate').click(function (e) {
     //     e.preventDefault();
@@ -168,6 +186,6 @@ $(function () {
     //     profile_phone.text('');
     //     profile_phone.text(phone);
     // });
-});
+
 
     // ------------------- wait for all element to load ends ------------------- 
